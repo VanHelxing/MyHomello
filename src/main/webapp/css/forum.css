@@ -1,1 +1,19 @@
 @CHARSET "UTF-8";
+
+table {
+	width: auto;
+	height: auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 5px 40px;
+	background-color: #66CCFF;
+}
+
+td {
+	background-color: #D8D8D8;
+}

@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,14 +32,12 @@ public class UserController {
 	
 	
 	@ResponseBody
-	@RequestMapping(value = "queryUserByName")
+	@RequestMapping(value = "queryUserByName", method = RequestMethod.POST)
 	public String queryUserByName(@RequestParam("userName")String userName) {
 		
-		log.info("userName: " + userName);
-		
 		List<User> listUsers = userService.queryUserByName(userName);
-		String Json = JSON.toJSONString(listUsers);
+		String stringJson = JSON.toJSONString(listUsers);
 		
-		return Json;
+		return stringJson;
 	}
 }

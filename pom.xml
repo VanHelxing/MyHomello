@@ -114,6 +114,7 @@
 	</dependency>
 	
 	<!-- 导入DB2数据库链接jar包 -->
+	<!-- 
 	<dependency>
 		<groupId>com.ibm.db2 </groupId>
 		<artifactId>db2jcc</artifactId>
@@ -124,6 +125,7 @@
 		<artifactId>db2jcc_license_cu</artifactId>
 		<version>9.7</version>
 	</dependency>
+	 -->
 	
 	<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
 	<dependency>

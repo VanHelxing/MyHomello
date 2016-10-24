@@ -13,6 +13,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/forum.css">
 	<script type="text/javascript" src="<%=basePath%>/js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="<%=basePath%>/js/myJS.js"></script>
 </head>
 <body>
 	<div>
@@ -22,9 +23,10 @@
 		</span>
 	</div>
 	<table class="forum">
-		<tr>
+		<tr class="title">
 			<th>序号</th>
 			<th>用户编号</th>
+			<th>用户姓名</th>
 			<th>登录口令</th>
 			<th>年龄</th>
 			<th>性别</th>
@@ -39,9 +41,16 @@
 				$.ajax({
 					url  : "<%=basePath%>/user/queryUserByName.do",
 					type : "POST",
+					datatype: "text",
 					data : {"userName":userName},
 					success : function(data) {
-						alert("data: " + data);
+						var json = eval('(' + data + ')');
+						var html = "";
+						$.each(json, function(index, user) {
+							html += "<tr><td>" + index + "</td><td>" + user.userId + "</td><td>" + user.userName +
+								   "</td><td>" + user.password + "</td><td>" + user.age + "</td><td>" + user.sex +  "</td></tr>"
+						});
+						$(".forum").append(html);
 					},
 					error : function(data) {
 						alert("请求失败!")
