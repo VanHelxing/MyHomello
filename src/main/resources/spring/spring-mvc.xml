@@ -12,12 +12,12 @@
        
        
     <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
-    <mvc:annotation-driven /> 
+    <mvc:annotation-driven/>
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->  
     <context:component-scan base-package="com.homello.web" />
     
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->  
-
+	<!--
     <bean id="mappingJacksonHttpMessageConverter"  
         class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">  
         <property name="supportedMediaTypes">  
@@ -26,7 +26,7 @@
             </list>  
         </property>  
     </bean> 
- 
+ 	 -->
     
     <bean id="stringConverter" class="org.springframework.http.converter.StringHttpMessageConverter">  
     	<property name="supportedMediaTypes">  
@@ -41,7 +41,7 @@
         class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
         <property name="messageConverters">  
             <list>  
-               <ref bean="mappingJacksonHttpMessageConverter" />
+               <!-- <ref bean="mappingJacksonHttpMessageConverter" />  -->
                <ref bean="stringConverter" />
             </list>  
         </property>  

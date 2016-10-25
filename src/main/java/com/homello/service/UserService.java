@@ -21,4 +21,11 @@ public class UserService {
 		List<User> listUsers = userDao.queryUserByName(userName);
 		return listUsers;
 	}
+	
+	
+	public User getUserByUserName(String userName) {
+		
+		User user = userDao.getUserByUserName(userName);
+		return user;
+	}
 }

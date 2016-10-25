@@ -4,8 +4,7 @@
 
 $(document).ready(function(){
 	
-	$('table tr').not('.title').live('mouseenter',function(){
-		alert("dd");
+	$("tr:not(.title)").live('mouseenter',function(){
 		$(this).css("background-color", "#66CCFF");
 	}).live('mouseleave',function(){
 		$(this).css("background-color", "#D8D8D8");

@@ -47,7 +47,7 @@
 						var json = eval('(' + data + ')');
 						var html = "";
 						$.each(json, function(index, user) {
-							html += "<tr><td>" + index + "</td><td>" + user.userId + "</td><td>" + user.userName +
+							html += "<tr><td>" + (index + 1) + "</td><td>" + user.userId + "</td><td>" + user.userName +
 								   "</td><td>" + user.password + "</td><td>" + user.age + "</td><td>" + user.sex +  "</td></tr>"
 						});
 						$(".forum").append(html);

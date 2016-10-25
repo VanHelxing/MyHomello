@@ -13,8 +13,17 @@ public interface UserIDao {
 	 * find user by user name.
 	 *
 	 * @param String
-	 * @return User
+	 * @return List<User>
 	 */
 	public List<User> queryUserByName(String userName);
+	
+	
+	/*
+	 * check login user
+	 * 
+	 * @param String
+	 * @return User
+	 */
+	public User getUserByUserName(String userName);
 	
 }

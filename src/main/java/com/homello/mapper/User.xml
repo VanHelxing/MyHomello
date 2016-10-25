@@ -12,6 +12,16 @@
 		<result property="sex" column="sex"/>
 	</resultMap>
 	
+	<!-- check login user -->
+	<select id="getUserByUserName" resultMap="userResult">
+		select user_id, username, password, age, sex from user
+		<where>
+			<if test="_parameter != null">
+				username = #{_parameter}
+			</if>
+		</where>
+	</select>
+	
 	
 	<!-- find user by user name -->
 	<select id="queryUserByName"  resultMap="userResult">

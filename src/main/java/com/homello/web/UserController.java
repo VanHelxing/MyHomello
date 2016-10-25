@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +18,7 @@ import com.homello.service.UserService;
 @RequestMapping("user")
 public class UserController {
 	
-	private static Logger log = Logger.getLogger(UserController.class);
+	//private static Logger log = Logger.getLogger(UserController.class);
 	
 	@Resource
 	private UserService userService;
@@ -33,7 +32,7 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value = "queryUserByName", method = RequestMethod.POST)
-	public String queryUserByName(@RequestParam("userName")String userName) {
+	public Object queryUserByName(@RequestParam("userName")String userName) {
 		
 		List<User> listUsers = userService.queryUserByName(userName);
 		String stringJson = JSON.toJSONString(listUsers);

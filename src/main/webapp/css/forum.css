@@ -8,12 +8,16 @@ table {
 	margin-top: 20px;
 }
 
-th, td {
-	border: 1px solid black;
-	padding: 5px 40px;
+tr {
+	background-color: #D8D8D8;;
+}
+
+tr.title {
 	background-color: #66CCFF;
 }
 
-td {
-	background-color: #D8D8D8;
+th, td {
+	border: 1px solid black;
+	padding: 5px 40px;
 }
+
