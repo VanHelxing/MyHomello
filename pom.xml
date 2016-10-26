@@ -133,11 +133,13 @@
 	</dependency>
 	
 	<!-- Apache Tiles 页面模板-->
+	<!--  
 	<dependency>
 	    <groupId>org.apache.tiles</groupId>
 	    <artifactId>tiles-jsp</artifactId>
 	    <version>3.0.5</version>
 	</dependency>
+	-->
 	
 	<!-- JSTL标签类 -->
 	<dependency>
