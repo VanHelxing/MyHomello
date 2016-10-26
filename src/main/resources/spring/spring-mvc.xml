@@ -47,6 +47,26 @@
         </property>  
     </bean>      
        
+    
+    <!-- 
+    	引入tiles配置文件
+    	配置在springmvc的视图解析器之前，这样就会优先匹配tiles配置来进行视图解析
+     --> 
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
+        <property name="definitions">
+            <list>
+                <value>classpath:Tiles/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+    
+    <!-- 配置视图解析器 -->
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass">
+            <value>org.springframework.web.servlet.view.tiles3.TilesView</value>
+        </property>
+        <property name="order" value="0"/>
+    </bean> 
 
     <!-- 
     	模型解析，在请求时为模型视图名称添加前后缀 
@@ -55,6 +75,5 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
     	p:viewClass="org.springframework.web.servlet.view.JstlView" 
      	p:prefix="/WEB-INF/jsp/"
-     	p:suffix=".jsp" />  
-		
+     	p:suffix=".jsp" />
 </beans>

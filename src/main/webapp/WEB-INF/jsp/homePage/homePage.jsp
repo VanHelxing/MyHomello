@@ -11,6 +11,6 @@
 <title>首页</title>
 </head>
 <body>
-	${USER_CONTEXT.userName},欢迎您回来。
+	${USER_CONTEXT.userName},欢迎您！
 </body>
 </html>
