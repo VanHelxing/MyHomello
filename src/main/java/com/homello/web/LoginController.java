@@ -23,7 +23,7 @@ public class LoginController extends BaseController {
 	private UserService userService;
 	
 	
-	@RequestMapping("doLogin")
+	@RequestMapping("login")
 	public ModelAndView login(HttpServletRequest request, User user){
 		
 		User dbUser = userService.getUserByUserName(user.getUserName());

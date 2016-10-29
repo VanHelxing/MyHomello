@@ -25,7 +25,7 @@ public class ForumFilter implements Filter {
 	
 	
 	// 不需要登录即可访问的URI资源
-	private static final String[] INHERENT_ESCAPE_URIS = {"/index.jsp", "/login.jsp", "/login/doLogin.do"};
+	private static final String[] INHERENT_ESCAPE_URIS = {"/index.jsp", "/login.jsp", "register.jsp", "/login/doLogin.do"};
 	
 
 	@Override

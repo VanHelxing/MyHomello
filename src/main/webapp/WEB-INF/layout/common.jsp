@@ -8,7 +8,7 @@
 	<style type="text/css">
 		#common_head {
 			width: 100%;
-			height: 400px;
+			height: 100px;
 			background-color: #CCCCFF;
 			display: block;
 		}
@@ -20,7 +20,9 @@
 		}
 		#common_foot {
 			width: 100%;
-			height: 400px;
+			height: 1
+			
+			00px;
 			background-color: #CCCCFF;
 			display: block;
 		}
