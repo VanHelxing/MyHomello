@@ -12,18 +12,11 @@
 		<put-attribute name="common_foot" value="/WEB-INF/layout/homello_foot.jsp"/>
 	</definition>
 	
-	
-	
-    <!-- 不继承直接引用也行 -->
-    <!-- 
-    <definition name="*.page" extends="template_base">
-        <put-attribute name="title" value="" />
-        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
-        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
-        <put-attribute name="body" value="/WEB-INF/tiles/{1}.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-    </definition>
-    -->
+	<definition name="*/*.page" extends="common">
+		<put-attribute name="common_head" value="/WEB-INF/layout/homello_head.jsp"/>
+		<put-attribute name="common_body" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
+		<put-attribute name="common_foot" value="/WEB-INF/layout/homello_foot.jsp"/>
+	</definition>
 	
 	
 </tiles-definitions>

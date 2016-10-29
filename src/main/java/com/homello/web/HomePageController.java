@@ -17,7 +17,7 @@ public class HomePageController {
 		
 		// 功能待开发...
 		
-		return "homePage.page";
+		return "homePage/homePage.page";
 	}
 	
 }
