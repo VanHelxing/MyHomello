@@ -10,9 +10,9 @@ import com.homello.domian.base.User;
 public class BaseController {
 	
 	protected static final String ERROR_MSG_KEY = "errorMsg";
-	protected static final String NAME_NOT_EXIST = "用户名不存在!";
-	protected static final String ERROR_PASSWORD = "输入密码错误!";
-	protected static final String NAME_LOCKED = "该用户已被关进小黑屋,请联系管理员!";
+	protected static final String NAME_NOT_EXIST = "0";
+	protected static final String ERROR_PASSWORD = "1";
+	protected static final String NAME_LOCKED = "2";
 	
 	
 	/*

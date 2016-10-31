@@ -1,8 +1,4 @@
-		/*
-			create by zrong.me
-			请大家关注我的个人微博 说Z先生爱你
-			也请大家关注我的个人网站 zrong.me
-		*/
+
 		*{
 			padding: 0;
 			margin: 0;
@@ -71,6 +67,7 @@
 			height: 74px;
 			margin: 0 auto;
 			background-size: contain;
+			font-size: 50px;
 		}
 		.cent-box-header .sub-title{
 			margin: 30px 0 20px;
@@ -151,6 +148,14 @@
 		#password,#verify,#user,#password1{
 			border-top: 1px solid #e8e8e8;
 		}
+		.is-visible {
+			color: #c33;
+			font-size: 14px;
+			position: absolute;
+			right: 5%;
+			top: 20%;
+		}
+		
 		.imgcode{
 			width: 95px;
 			position: absolute;

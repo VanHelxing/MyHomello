@@ -17,7 +17,7 @@
 <div id="box"></div>
 <div class="cent-box">
 	<div class="cent-box-header">
-		<h1 class="main-title">十月</h1>
+		<h1 class="main-title">Homello</h1>
 		<h2 class="sub-title">&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;欢迎来到华美乐ERP系统</h2>
 	</div>
 
@@ -31,18 +31,26 @@
 		</div>
 
 		<div class="login form">
-			<div class="group">
-				<div class="group-ipt email">
-					<input type="text" name="email" id="email" class="ipt" placeholder="邮箱地址" required>
+			<form action="${context}/login/doLogin.do" method="post">
+				<div class="group">
+					<div class="group-ipt user">
+						<input type="text" name="userName" id="user" class="ipt" placeholder="您的用户姓名" required>
+						<c:if test="${not empty errorMsg && errorMsg == '0'}">
+							<label class="errorUserName is-visible">用户名不存在</label>
+						</c:if>
+					</div>
+					<div class="group-ipt password">
+						<input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
+						<c:if test="${not empty errorMsg && errorMsg == '1'}">
+							<label class="errorPassword is-visible">密码错误</label>
+						</c:if>
+					</div>
+					<div class="group-ipt verify">
+						<input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
+						<img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
+					</div>
 				</div>
-				<div class="group-ipt password">
-					<input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
-				</div>
-				<div class="group-ipt verify">
-					<input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
-					<img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
-				</div>
-			</div>
+			</form>
 		</div>
 
 		<div class="button">
@@ -60,13 +68,32 @@
 
 <div class="footer">
 	<p>范海辛 - Van Helsing</p>
-	<p>Designed By VanHelsing & <a href="#">HelSing</a> 2016 - 10 - 29</p>
+	<p>Power By VanHelsing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2016-10-29</p>
 </div>
 
 <script src='${context}/js/particles.js' type="text/javascript"></script>
 <script src='${context}/js/background.js' type="text/javascript"></script>
 <script src='${context}/js/jquery.min.js' type="text/javascript"></script>
+<script src='${context}/js/layer/layer.js' type="text/javascript"></script>
 <script>
+	$(".login-btn").click(function() {
+		$("form").submit();
+	});
+	
+	$("#user").focus(function(){
+	   	$(".errorUserName").html("");
+	});
+	
+	$("#password").focus(function(){
+	   	$(".errorPassword").html("");
+	});
+	
+	$("#verify").focus(function(){
+	
+	});
+
+
+
 	$('.imgcode').hover(function(){
 		layer.tips("看不清？点击更换", '.verify', {
         		time: 6000,

@@ -17,15 +17,15 @@
 <div id="box"></div>
 <div class="cent-box register-box">
 	<div class="cent-box-header">
-		<h1 class="main-title hide">千寻</h1>
-		<h2 class="sub-title">生活热爱分享 - Thousands Find</h2>
+		<h1 class="main-title">Homello</h1>
+		<h2 class="sub-title">&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;欢迎来到华美乐ERP系统</h2>
 	</div>
 
 	<div class="cont-main clearfix">
 		<div class="index-tab">
 			<div class="index-slide-nav">
-				<a href="login.html">登录</a>
-				<a href="register.html" class="active">注册</a>
+				<a href="${context}/login.jsp">登录</a>
+				<a href="${context}/register.jsp" class="active">注册</a>
 				<div class="slide-bar slide-bar1"></div>			
 			</div>
 		</div>
@@ -58,15 +58,14 @@
 </div>
 
 <div class="footer">
-	<p>千寻 - Thousands Find</p>
-	<p>Designed By ZengRong & <a href="zrong.me">zrong.me</a> 2016</p>
+	<p>范海辛 - Van Helsing</p>
+	<p>Power By VanHelsing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2016-10-29</p>
 </div>
 
-<script src='js/particles.js' type="text/javascript"></script>
-<script src='js/background.js' type="text/javascript"></script>
-<script src='js/jquery.min.js' type="text/javascript"></script>
-<script src='js/layer/layer.js' type="text/javascript"></script>
-<script src='js/index.js' type="text/javascript"></script>
+<script src='${context}/js/particles.js' type="text/javascript"></script>
+<script src='${context}/js/background.js' type="text/javascript"></script>
+<script src='${context}/js/jquery.min.js' type="text/javascript"></script>
+<script src='${context}/js/layer/layer.js' type="text/javascript"></script>
 <script>
 	$('.imgcode').hover(function(){
 		layer.tips("看不清？点击更换", '.verify', {

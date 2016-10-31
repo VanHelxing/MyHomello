@@ -3,13 +3,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>共用主页面</title>
+	<title>华美乐首页</title>
 	
 	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
 		#common_head {
 			width: 100%;
 			height: 100px;
-			background-color: #CCCCFF;
+			background-color: #fff;
 			display: block;
 		}
 		#common_body {
@@ -17,13 +21,12 @@
 			height: auto;
 			background-color: #99CCFF;
 			display: block;
+			position: relative;
 		}
 		#common_foot {
 			width: 100%;
-			height: 1
-			
-			00px;
-			background-color: #CCCCFF;
+			height: 200px;
+			background-color: #303030;
 			display: block;
 		}
 	</style>
