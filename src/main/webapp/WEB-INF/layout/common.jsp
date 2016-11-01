@@ -13,15 +13,14 @@
 		#common_head {
 			width: 100%;
 			height: 100px;
-			background-color: #fff;
+			background-color: #F0F8FF;
 			display: block;
 		}
 		#common_body {
 			width: 100%;
-			height: auto;
+			height: 800px;
 			background-color: #99CCFF;
 			display: block;
-			position: relative;
 		}
 		#common_foot {
 			width: 100%;

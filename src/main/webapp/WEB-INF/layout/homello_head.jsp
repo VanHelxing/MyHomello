@@ -81,7 +81,7 @@
 		<div id="user">
 			${USER_CONTEXT.userName}
 			<span style="font-size: 12px;">&nbsp;|&nbsp;</span>
-			<span><a href="javascript:void(0)">注销</a></span>
+			<span><a href="${context}/login/doLogout.do">注销</a></span>
 		</div>
 	</div>
 </body>

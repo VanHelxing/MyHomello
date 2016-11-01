@@ -4,6 +4,7 @@ import static com.homello.common.CommonConstant.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -48,5 +49,13 @@ public class LoginController extends BaseController {
 			view.setViewName("redirect:" + toURL);
 		}
 		return view;
+	}
+	
+	
+	@RequestMapping("/doLogout")
+	public String logout(HttpSession session) {
+		
+		session.removeAttribute(USER_CONTEXT);
+		return "forward:/login.jsp";
 	}
 }
