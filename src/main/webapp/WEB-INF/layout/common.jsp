@@ -25,14 +25,19 @@
 		#common_foot {
 			width: 100%;
 			height: 200px;
-			background-color: #303030;
+			background-color: #222;
 			display: block;
+		}
+		hr {
+			padding-top: 5px;
+			background-color: #222;
 		}
 	</style>
 </head>
 <body>
 	
 	<div id="common_head"><tiles:insertAttribute name="common_head"/></div>
+	<hr>
 	<div id="common_body"><tiles:insertAttribute name="common_body"/></div>
 	<div id="common_foot"><tiles:insertAttribute name="common_foot"/></div>
 	

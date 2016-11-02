@@ -1,4 +1,4 @@
-package com.homello.dao;
+package com.homello.dao.base;
 
 import java.util.List;
 

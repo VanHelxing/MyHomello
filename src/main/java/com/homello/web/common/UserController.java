@@ -1,4 +1,4 @@
-package com.homello.web;
+package com.homello.web.common;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.homello.domian.base.User;
-import com.homello.service.UserService;
+import com.homello.service.base.UserService;
 
 @Controller
 @RequestMapping("user")

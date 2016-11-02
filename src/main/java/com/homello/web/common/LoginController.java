@@ -1,4 +1,4 @@
-package com.homello.web;
+package com.homello.web.common;
 
 import static com.homello.common.CommonConstant.*;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.homello.domian.base.User;
-import com.homello.service.UserService;
+import com.homello.service.base.UserService;
 
 @Controller
 @RequestMapping("/login")

@@ -9,8 +9,15 @@ public class User extends BaseDomain {
 	private String password;
 	private int age;
 	private int sex;
+	private String userType;
 	
 	
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public int getUserId() {
 		return userId;
 	}

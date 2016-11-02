@@ -2,22 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
-<mapper namespace="com.homello.dao.UserIDao">
+<mapper namespace="com.homello.dao.base.UserIDao">
 
 	<resultMap type="com.homello.domian.base.User" id="userResult">
 		<id property="userId" column="user_id"/>
-		<result property="userName" column="username"/>
+		<result property="userName" column="user_name"/>
+		<result property="userType" column="user_type"/>
 		<result property="password" column="password"/>
 		<result property="age" column="age"/>
 		<result property="sex" column="sex"/>
 	</resultMap>
 	
-	<!-- check login user -->
+	<!-- 用户登录 -->
 	<select id="getUserByUserName" resultMap="userResult">
-		select user_id, username, password, age, sex from user
+		select user_id, user_name, user_type, password, age, sex from user
 		<where>
 			<if test="_parameter != null">
-				username = #{_parameter}
+				user_name = #{_parameter}
 			</if>
 		</where>
 	</select>
@@ -25,10 +26,10 @@
 	
 	<!-- find user by user name -->
 	<select id="queryUserByName"  resultMap="userResult">
-		select user_id, username, password, age, sex from user
+		select user_id, user_name, user_type, password, age, sex from user
 		<where>
 			<if test="_parameter != null">
-				username like concat(#{_parameter}, '%')
+				user_name like concat(#{_parameter}, '%')
 			</if>
 		</where>
 	</select>

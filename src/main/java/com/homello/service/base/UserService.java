@@ -1,4 +1,4 @@
-package com.homello.service;
+package com.homello.service.base;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.homello.dao.UserIDao;
+import com.homello.dao.base.UserIDao;
 import com.homello.domian.base.User;
 
 @Service

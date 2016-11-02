@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.homello.dao.report.PriceChangeReportIDao">
+	<resultMap type="com.homello.domian.report.PriceChangeReport" id="PriceChangeReportResult">
+		<result property="supId" column="sup_id"/>
+		<result property="contractId" column="contract_id"/>
+		<result property="deptName" column="dep_name"/>
+		<result property="id" column="id"/>
+		<result property="executeDate" column="execute_date"/>
+		<result property="validDate" column="valid_date"/>
+		<result property="createrName" column="creater_name"/>
+		<result property="checkerName" column="checker_name"/>
+		<result property="executerName" column="executer_name"/>
+		<result property="status" column="status"/>
+		<result property="groupId" column="group_id"/>
+		<result property="groupName" column="group_name"/>
+		<result property="proId" column="pro_id"/>
+		<result property="proName" column="pro_name"/>
+		<result property="proSpec" column="pro_spec"/>
+		<result property="proPurchaseUnit" column="pro_purchase_unit"/>
+		<result property="proType" column="pro_type"/>
+		<result property="proBand" column="pro_band"/>
+		<result property="oldPrice" column="old_price"/>
+		<result property="newPrice" column="new_price"/>
+		<result property="qty" column="qty"/>
+	</resultMap>
+	
+	<!-- 获取所有金额明细数据 -->
+	<select id="queryAllPriceChangeReport" resultType="PriceChangeReportResult">
+		<include refid="select_fields"/>
+	    where substr(h.id, 1, 2) = 'SP'
+	</select>
+	
+	
+	
+	<sql id="select_profit">
+		select
+		    h.sup_id sup_id,
+		    h.contract_id contract_id,
+		    (select dep.dep_name from department dep where dep.dep_id = h.dept_id) dep_name,
+		    h.id id,
+        	to_char(h.EXECUTE_DATE, 'yyyy-MM-dd') execute_date,
+       	    to_char(h.VALID_DATE, 'yyyy-MM-dd') valid_date,
+		    (select e.emp_name from employee e where e.emp_id = h.creater_id) creater_name,
+		    (select e.emp_name from employee e where e.emp_id = h.checker_id) checker_name,
+		    (select e.emp_name from employee e where e.emp_id = h.executer_id) executer_name,
+		    h.status status,
+		    d.group_id group_id,
+   			(select pro.pro_name from product pro where pro.pro_id = d.group_id) group_name,
+		    d.pro_id pro_id,
+		    p.pro_name pro_name,
+		    p.pro_spec pro_spec,
+		    p.pro_purchase_unit pro_purchase_unit,
+		    p.pro_type pro_type,
+		    (select b.bra_name from brand b where b.bra_id = p.pro_band) pro_band,
+		    d.qty qty,
+		    d.old_price old_price,
+		    d.new_price new_price    
+		  from price_change_head h left join price_change_detail d
+		    on d.id = h.id left join product p 
+		    on d.pro_id = p.pro_id left join sup_contract_head s
+    		on h.contract_id = s.id
+	</sql>
+</mapper>

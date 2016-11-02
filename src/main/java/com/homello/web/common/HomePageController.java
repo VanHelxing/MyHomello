@@ -1,8 +1,7 @@
-package com.homello.web;
+package com.homello.web.common;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -21,10 +20,5 @@ public class HomePageController {
 		return "homePage/homePage.page";
 	}
 	
-	
-	@RequestMapping(value = "/forum/{forumName}")
-	public String forum(@PathVariable("forumName")String forumName, ModelMap modelMap) {
-		
-		return "homePage/" + forumName;
-	}
+
 }

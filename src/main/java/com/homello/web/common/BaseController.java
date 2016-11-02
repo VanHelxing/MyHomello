@@ -1,4 +1,4 @@
-package com.homello.web;
+package com.homello.web.common;
 
 import javax.servlet.http.HttpServletRequest;
 
